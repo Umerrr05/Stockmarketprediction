@@ -12,13 +12,13 @@ from keras.models import load_model
 from keras.layers import LSTM
 
 # Page Layout
-st.set_page_config(page_title ="SafeStock AI Web Application",  page_icon = "🔮", layout = "wide")
-tab1, tab2 = st.tabs(["Forecast", "Dashboard"])
-info_multi = '''🔮 SafeStock AI is your go-to platform for exploring AI-powered stock forecasting and analysis using real-time stock values via Yahoo Finance.      
+st.set_page_config(page_title ="IRMTP",  page_icon = "./logo-removebg-preview-Edited.png", layout = "wide")
+tab1, tab2 ,tab3 = st.tabs(["Prediction", "Insights", "About Us"])
+info_multi = ''' IRMTP is your go-to platform for exploring AI-powered stock forecasting and analysis using real-time stock values via Yahoo Finance.      
 Whether you're a data science enthusiast or a market observer, this app blends cutting-edge deep learning with intuitive tools to bring you actionable insights.'''
 
 with tab1: 
-    st.header('SafeStock AI Web Application')
+    st.header('IRMTP Web Application')
     st.info(info_multi)
     st.write(' ')
 
@@ -255,10 +255,8 @@ with tab1.col2:
     st.markdown(insight, unsafe_allow_html=True)
 
 
-dedication = """<div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6;"><i>The StockSense AI is dedicated to my dearest, Ceyhun Utku Girgin.</i>"""
-with tab1.container(border = True):
-    st.markdown(dedication, unsafe_allow_html=True)
-    st.markdown(''':rainbow[End-to-end project is done by] :blue-background Mr Black Landi''')
+
+    
 
 tab1.warning('Disclaimer: This project is for research and educational purposes only and is not intended for financial or investment advice.', icon="❗")
 
@@ -267,7 +265,7 @@ import plotly.graph_objects as go
 from datetime import date
 
 with tab2: 
-    st.header('SafeStock AI: Interactive Stock Dashboard')
+    st.header('IRMTP: Interactive Stock Insights')
     st.markdown(''':blue-background[📊 Technical Analysis: Explore trends with indicators like SMA, EMA, RSI, and OBV using interactive charts.]''')
 
 obv_text = '''Tracks the flow of volume to predict price changes.  
@@ -382,3 +380,38 @@ elif technical_indicator == 'RSI (Relative Strength Index)':
 
 with tab2: 
     st.plotly_chart(fig)
+
+# ------------Tab3-----------
+with tab3:
+    st.header("About Us" , divider=True)
+    
+    st.subheader("A revolutionary AI-powered stock market prediction platform created by passionate university students as their final year project")
+    st.info("IRMTP represents the culmination of months of intensive research, development, and innovation by a dedicated team of computer science students. This project combines cutting-edge artificial intelligence with modern web technologies to democratize financial market analysis and make professional-grade investment tools accessible to everyone.")
+    st.text(" ")
+    st.text(" ")
+    st.markdown(body="""<h2 style="text-align:center">Meet Our Team</h2>""", unsafe_allow_html=True)
+    # Sample data for cards
+    cards = [
+        {"title": "Syeda Ayesha", "description": "Computer Science Student"},
+        {"title": "Sabahat", "description": "Computer Science Student"},
+        {"title": "Hasnain Ahmed", "description": "Computer Science Student"},
+        {"title": "Anas Iqbal", "description": "Computer Science Student"},
+        {"title": "Usama Arshad", "description": "Computer Science Student"},
+    ]
+
+# Display cards in rows of 3
+    for i in range(0, len(cards), 3):
+        cols = st.columns(3)
+        for j in range(3):
+            if i + j < len(cards):
+                with cols[j]:
+                    with st.container():
+                        st.markdown(
+                            f"""
+                            <div style="border:0.5px solid #1C3E4D; border-radius:10px;margin-bottom:20px; padding:20px;background-color:transparent:text-align:center ">
+                                <h4 style="margin-bottom:10px;text-align:center">{cards[i + j]["title"]}</h4>
+                                <p style="text-align:center">{cards[i + j]["description"]}</p>
+                            </div>
+                            """,
+                            unsafe_allow_html=True
+                        )
