@@ -1,0 +1,7 @@
+[theme]
+base = "light"  # Options: "light" or "dark"
+primaryColor = "#4CAF50"  # Green for buttons and highlights (matches your insight text)
+backgroundColor = "#00202E"  # Light grayish-blue for a clean look
+secondaryBackgroundColor = "#82CA16"  # White for cards and containers
+textColor = "#BFEDFC"  # Dark gray for text readability
+font = "sans serif"  # Options: "sans serif", "serif", "monospace"
